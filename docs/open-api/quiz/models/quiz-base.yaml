@@ -1,0 +1,16 @@
+title: Quiz Base
+type: object
+properties:
+  lessonId:
+    type: integer
+    format: int64
+    example: 34
+    description: The unique identifier of the quiz
+  questions:
+    type: array
+    items:
+      $ref: ./questions.yaml
+    description: The questions for this quiz
+required:
+  - lessonId
+  - questions

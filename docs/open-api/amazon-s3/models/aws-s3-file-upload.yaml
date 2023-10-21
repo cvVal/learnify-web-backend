@@ -1,0 +1,27 @@
+title: AWS S3 File Upload
+type: object
+properties:
+  name:
+    type: string
+    example: "548f567a-70fc-4164-932e-675b2fad2282.jpg"
+    description: The name of the file
+  uploadId:
+    type: string
+    example: "pifC6T9YBAsNSk_1HTPWP0cG5DA0go8FYyc7u9OnjVvxaAm3OndELncth8quwIT8.6xZ7yytDvP_MVSZ09TNoCrltH8wh2DTo6NA3AZB2TA-"
+    description: The upload id
+  location:
+    type: string
+    example: "https://learnify-reactive.s3.us-east-2.amazonaws.com/d7485204-1397-4206-bb56-0c4a66bf59d2.jpg"
+    description: The location of the file in the server
+  type:
+    type: string
+    example: image
+    description: The file's type
+  eTag:
+    type: string
+    example: "79f4a5fb5bbaf072139a3cc1fe6dcbb7-1"
+    description: Entity tag for the uploaded object.
+  preSignedUrl:
+    type: string
+    example: "https://learnify-reactive.s3.us-east-2.amazonaws.com/d7485204-1397-4206-bb56-0c4a66bf59d2.jpg"
+    description: The preSigned URL where you can access this file for a limited time

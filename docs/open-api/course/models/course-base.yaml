@@ -1,0 +1,62 @@
+title: Course Base
+type: object
+properties:
+  title:
+    type: string
+    example: Introduction to Computer Science
+    description: The title of the course
+  description:
+    type: string
+    example: Learn the basics of computer science with this introductory course.
+    description: A description of the course
+  price:
+    type: double
+    example: 12.99
+    description: The price of the course
+  duration:
+    type: integer
+    example: 480
+    description: The duration of the course in seconds
+  category:
+    type: string
+    example: Computer Science
+    description: The category of the course
+  tags:
+    type: array
+    items:
+      type: string
+    example: ["Programming", "Beginner"]
+    description: The tags associated with the course
+  level:
+    type: string
+    example: Beginner
+    description: The level of the course
+  instructorId:
+    type: integer
+    format: int64
+    example: 456
+    description: The unique identifier of the instructor this course belongs to
+  lessonIds:
+    type: array
+    items:
+      type: string
+    example: ["1", "2", "3", "4"]
+    description: The unique identifiers of the lessons for this course
+  preRequisites:
+    type: string
+    example: None
+    description: Any pre-requisites for the course
+  imageUrl:
+    type: string
+    example: https://example.com/image.jpg
+    description: The URL for the course image
+  published:
+    type: boolean
+    example: true
+    description: Whether the course is published or not
+required:
+  - title
+  - description
+  - category
+  - level
+  - instructorId

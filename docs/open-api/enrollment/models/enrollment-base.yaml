@@ -1,0 +1,26 @@
+title: Enrollment Base
+type: object
+properties:
+  courseId:
+    type: integer
+    format: int64
+    example: 6
+    description: The unique identifier of the course this enrollment belongs to
+  studentId:
+    type: integer
+    format: int64
+    example: 456
+    description: The unique identifier of the user this enrollment belongs to
+  progress:
+    type: integer
+    example: 58
+    description: The percentage progress for this course enrollment
+  completed:
+    type: boolean
+    example: false
+    description: Whether the course is completed or not
+required:
+  - courseId
+  - studentId
+  - progress
+  - completed

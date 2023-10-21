@@ -1,0 +1,14 @@
+title: Error
+type: object
+description: A standard error object.
+x-tags:
+  - Common
+properties:
+  code:
+    type: string
+    example: "500"
+  message:
+    type: string
+    example: Internal server error
+required:
+  - message

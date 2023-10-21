@@ -1,0 +1,28 @@
+get:
+  summary: Retrieve all the lessons by course id
+  operationId: getLessonsByCourseId
+  tags:
+    - Lesson
+  parameters:
+    - name: courseId
+      in: path
+      required: true
+      description: The unique identifier of the course.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/lesson-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

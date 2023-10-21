@@ -1,0 +1,15 @@
+title: Resource Base
+type: object
+properties:
+  resourceUrl:
+    type: string
+    example: "https://resource-example.com"
+    description: The URL where this resource is stored
+  name:
+    type: string
+    example: Programming principles
+    description: The name of the resource
+required:
+  - lessonId
+  - resourceUrl
+  - name

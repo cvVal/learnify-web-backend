@@ -1,0 +1,68 @@
+post:
+  summary: Creates a new course
+  operationId: createCourse
+  tags:
+    - Course
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ./models/course-base.yaml
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/course-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+put:
+  summary: Updates a course
+  operationId: updateCourse
+  tags:
+    - Course
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ./models/course-base.yaml
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/course-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+get:
+  summary: Retrieve all the published courses
+  operationId: getAllCourses
+  tags:
+    - Course
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/course-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

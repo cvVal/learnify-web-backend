@@ -1,0 +1,39 @@
+title: Lesson Base
+type: object
+properties:
+  title:
+    type: string
+    example: Introduction to Python
+    description: The title of the lesson
+  description:
+    type: string
+    example: In this lesson, you'll learn the basics of Python programming language.
+    description: A description of the lesson
+  duration:
+    type: integer
+    example: 480
+    description: The duration of the lesson in seconds
+  status:
+    type: string
+    example: NOT_STARTED
+    description: The status of the lesson
+  courseId:
+    type: integer
+    format: int64
+    example: 34
+    description: The unique identifier of the course this lesson belongs to
+  contentUrl:
+    type: string
+    example: https://example.com
+    description: The url of the lesson's content
+  order:
+    type: integer
+    example: 3
+    description: The order of this lesson
+required:
+  - title
+  - description
+  - price
+  - category
+  - instructorId
+  - published

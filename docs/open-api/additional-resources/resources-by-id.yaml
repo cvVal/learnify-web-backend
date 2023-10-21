@@ -1,0 +1,48 @@
+get:
+  summary: Retrieve a resource by id
+  operationId: getResourceById
+  tags:
+    - Additional Resources
+  parameters:
+    - name: resourceId
+      in: path
+      required: true
+      description: The unique identifier of the resource.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/resource-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+delete:
+  summary: Delete a resource by id
+  operationId: deleteResourceById
+  tags:
+    - Additional Resources
+  parameters:
+    - name: resourceId
+      in: path
+      required: true
+      description: The unique identifier of the resource.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No content is returned.
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

@@ -1,0 +1,14 @@
+allOf:
+  - $ref: ./user-base.yaml
+  - title: User Create
+    type: object
+    properties:
+      email:
+        type: string
+        example: user_17@email.com
+        description: The email address of the user
+    required:
+      - firstName
+      - lastName
+      - email
+      - roles

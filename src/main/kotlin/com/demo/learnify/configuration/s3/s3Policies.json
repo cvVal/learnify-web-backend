@@ -1,0 +1,59 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowGroupToSeeBucketListAndAlsoAllowGetBucketLocationRequiredForListBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation"
+      ],
+      "Resource": "arn:aws:s3:::learnify-reactive"
+    },
+    {
+      "Sid": "AllowRootLevelListingOfCompanyBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::learnify-reactive",
+      "Condition": {
+        "StringEquals": {
+          "s3:prefix": [
+            ""
+          ],
+          "s3:delimiter": [
+            "/"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowListBucketIfSpecificPrefixIsIncludedInRequest",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::learnify-reactive",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "Course-pictures/*",
+            "Course-videos/*",
+            "Course-resources/*",
+            "Profile-pictures/*"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "AllowUserToReadWriteObjectDataInAllFolders",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::learnify-reactive/*"
+    }
+  ]
+}

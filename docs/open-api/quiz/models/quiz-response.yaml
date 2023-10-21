@@ -1,0 +1,18 @@
+allOf:
+  - $ref: ./quiz-base.yaml
+  - title: Quiz Response
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 8
+        description: The unique identifier of the quiz
+      createdAt:
+        type: string
+        example: "2023-03-12T19:07:57.16753"
+        description: The date and time the quiz was created
+      updatedAt:
+        type: string
+        example: "2023-03-14T00:56:21.547918"
+        description: The date and time the quiz was last updated

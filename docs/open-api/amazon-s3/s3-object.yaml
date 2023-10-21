@@ -1,0 +1,46 @@
+get:
+  summary: Retrieve an S3 object
+  operationId: getS3Object
+  tags:
+    - Amazon S3
+  parameters:
+    - name: objectKey
+      in: path
+      required: true
+      description: The unique key identifier of the file.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/aws-s3-object.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+delete:
+  summary: Delete an S3 object
+  operationId: deleteS3Object
+  tags:
+    - Amazon S3
+  parameters:
+    - name: objectKey
+      in: path
+      required: true
+      description: The unique key identifier of the file.
+      schema:
+        type: string
+  responses:
+    '204':
+      description: No content is returned.
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

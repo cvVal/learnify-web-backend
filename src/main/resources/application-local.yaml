@@ -1,0 +1,18 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/postgres
+    username: user
+    password: pass
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: trace
+# AWS properties
+aws:
+  access-key: yourkey
+  secret-key: yourkey
+  region: us-east-2
+  s3-bucket-name: yourbucket
+  multipart-min-part-size: 5242880 # 5MB

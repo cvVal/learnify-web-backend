@@ -1,0 +1,69 @@
+post:
+  summary: Creates a new resource
+  operationId: createResource
+  tags:
+    - Additional Resources
+  requestBody:
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: ./models/resource-base.yaml
+            - title: Resource Update Request
+              type: object
+              properties:
+                lessonId:
+                  type: integer
+                  format: int64
+                  example: 6
+                  description: The unique identifier of the lesson this resource belongs to
+              required:
+                - lessonId
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/resource-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+put:
+  summary: Updates a resource
+  operationId: updateResource
+  tags:
+    - Additional Resources
+  requestBody:
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: ./models/resource-base.yaml
+            - title: Resource Update Request
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                  example: 15
+                  description: The unique identifier of the resource to be updated
+              required:
+                - id
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/resource-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

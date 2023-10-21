@@ -1,0 +1,24 @@
+post:
+  summary: Uploads a file to the amazon bucket
+  operationId: uploadS3
+  tags:
+    - Amazon S3
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: file-data
+      in: formData
+      required: true
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/aws-s3-file-upload.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

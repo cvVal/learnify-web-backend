@@ -1,0 +1,20 @@
+get:
+  summary: Retrieve a list of S3 objects
+  operationId: getS3Objects
+  tags:
+    - Amazon S3
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/aws-s3-object.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

@@ -1,0 +1,12 @@
+title: User Roles
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - ADMIN
+      - STUDENT
+      - INSTRUCTOR
+    description: The role of the user
+required:
+  - type

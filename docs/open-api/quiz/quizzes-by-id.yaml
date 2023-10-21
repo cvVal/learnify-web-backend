@@ -1,0 +1,48 @@
+get:
+  summary: Retrieve a quiz by id
+  operationId: getQuizById
+  tags:
+    - Quiz
+  parameters:
+    - name: quizId
+      in: path
+      required: true
+      description: The unique identifier of the quiz.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/quiz-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+delete:
+  summary: Delete a quiz by id
+  operationId: deleteQuizById
+  tags:
+    - Quiz
+  parameters:
+    - name: quizId
+      in: path
+      required: true
+      description: The unique identifier of the quiz.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No content is returned.
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

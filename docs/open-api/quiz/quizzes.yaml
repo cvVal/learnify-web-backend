@@ -1,0 +1,58 @@
+post:
+  summary: Creates a new quiz
+  operationId: createQuiz
+  tags:
+    - Quiz
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ./models/quiz-base.yaml
+  responses:
+    '201':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/quiz-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+put:
+  summary: Updates a quiz
+  operationId: updateQuiz
+  tags:
+    - Quiz
+  requestBody:
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: ./models/quiz-base.yaml
+            - title: Quiz Update Request
+              type: object
+              properties:
+                id:
+                  type: integer
+                  format: int64
+                  example: 15
+                  description: The unique identifier of the quiz to be updated
+              required:
+                - id
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/quiz-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

@@ -1,0 +1,19 @@
+title: AWS S3 Object
+type: object
+properties:
+  key:
+    type: string
+    example: "548f567a-70fc-4164-932e-675b2fad2282.jpg"
+    description: The unique identifier of the file
+  lastModified:
+    type: string
+    example: "2023-03-15T10:15:30Z"
+    description: The date and time the resource was last updated
+  eTag:
+    type: string
+    example: "9214d5ba72030b4bc468982f787a0a3d-1"
+    description: Entity tag for the uploaded object.
+  size:
+    type: integer
+    format: int64
+    example: 2212587

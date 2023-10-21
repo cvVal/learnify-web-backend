@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Spring Video Streaming</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+          crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+          background-color: black;
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          color: white;
+        }
+
+        .video-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .play-button {
+          width: 68px;
+          height: 48px;
+          background-color: #ff0000;
+          border: none;
+          border-radius: 4px;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          margin-left: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .play-button:hover {
+          background-color: #cc0000;
+        }
+
+        .fullscreen-button {
+          width: 40px;
+          height: 40px;
+          background-color: #1c1c1c;
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+          margin-left: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .fullscreen-button:hover {
+          background-color: #444;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <h2 class="text-center">Reactive Spring Video Streaming</h2>
+    <div class="video-container">
+        <video src="streaming/lego-nintendo" width="720" height="480" controls preload="none"></video>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous">
+</script>
+</body>
+</html>

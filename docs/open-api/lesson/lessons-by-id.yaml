@@ -1,0 +1,48 @@
+get:
+  summary: Retrieve a lesson by id
+  operationId: getLessonById
+  tags:
+    - Lesson
+  parameters:
+    - name: lessonId
+      in: path
+      required: true
+      description: The unique identifier of the lesson.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/lesson-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+delete:
+  summary: Delete a lesson by id
+  operationId: deleteLessonById
+  tags:
+    - Lesson
+  parameters:
+    - name: lessonId
+      in: path
+      required: true
+      description: The unique identifier of the lesson.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No content is returned.
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

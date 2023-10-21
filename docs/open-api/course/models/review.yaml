@@ -1,0 +1,31 @@
+title: Review
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 1
+    description: The unique identifier of the review
+  courseId:
+    type: integer
+    format: int64
+    example: 5
+    description: The unique identifier of the course this review belongs to
+  userId:
+    type: integer
+    example: 10
+    description: The ID of the user who submitted the review
+  rating:
+    type: integer
+    example: 5
+    description: The rating given in the review (between 1 and 5)
+  comment:
+    type: string
+    example: This was a great course!
+    description: The comment left in the review
+required:
+  - id
+  - courseId
+  - userId
+  - rating
+  - comment

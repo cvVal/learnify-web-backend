@@ -1,0 +1,5 @@
+application:
+  name: Learnify
+server:
+  error:
+    include-message: always

@@ -1,0 +1,19 @@
+allOf:
+  - $ref: ./enrollment-base.yaml
+  - title: Enrollment Response
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 195
+        description: The unique identifier of the enrollment
+      enrollmentDate:
+        type: string
+        format: date-time
+        example: "2023-03-15T10:15:30Z"
+        description: The date and time the enrollment was made
+      certificateUrl:
+        type: string
+        example: "https://my-certificate-example.com"
+        description: The URL to get this certificate for the course completion

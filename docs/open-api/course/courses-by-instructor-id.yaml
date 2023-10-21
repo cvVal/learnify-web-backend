@@ -1,0 +1,28 @@
+get:
+  summary: Retrieve the courses that belongs to an instructor
+  operationId: getCoursesByInstructorId
+  tags:
+    - Course
+  parameters:
+    - name: instructorId
+      in: path
+      required: true
+      description: The unique identifier of the instructor.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/course-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

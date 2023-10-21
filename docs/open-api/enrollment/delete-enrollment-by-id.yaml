@@ -1,0 +1,22 @@
+delete:
+  summary: Delete an enrollment by id
+  operationId: deleteEnrollmentById
+  tags:
+    - Enrollment
+  parameters:
+    - name: enrollmentId
+      in: path
+      required: true
+      description: The unique identifier of the enrollment.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No body response to a valid request
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

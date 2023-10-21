@@ -1,0 +1,77 @@
+post:
+  summary: Create a new user
+  operationId: createUser
+  tags:
+    - User Profile
+  requestBody:
+    content:
+      application/json:
+        schema:
+          allOf:
+            - $ref: ./models/user-create.yaml
+            - type: object
+              properties:
+                password:
+                  type: string
+                  example: $tr0ng_P4$WoRd!
+                  description: The password for the user
+              required:
+                - password
+  responses:
+    '201':
+      description: Expected response to a valid request (Note that the password is not passed back in the response)
+      content:
+        application/json:
+          schema:
+            $ref: ./models/user-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+put:
+  summary: Updates a user
+  operationId: updateUser
+  tags:
+    - User Profile
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ./models/user-update-request.yaml
+  responses:
+    '200':
+      description: Expected response to a valid request (Note that the password is not passed back in the response)
+      content:
+        application/json:
+          schema:
+            $ref: ./models/user-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+
+get:
+  summary: Returns a collection of users
+  operationId: getUsers
+  tags:
+    - User Profile
+  responses:
+    '200':
+      description: Expected response to a valid request (Note that the password is not passed back in the response)
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/user-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

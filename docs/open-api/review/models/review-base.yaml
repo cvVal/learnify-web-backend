@@ -1,0 +1,26 @@
+title: Review Base
+type: object
+properties:
+  courseId:
+    type: integer
+    format: int64
+    example: 34
+    description: The unique identifier of the course this review belongs to
+  userId:
+    type: integer
+    format: int64
+    example: 3
+    description: The unique identifier of the user this review belongs to
+  rating:
+    type: integer
+    example: 4
+    description: A rate for the course
+  comment:
+    type: string
+    example: Good course!
+    description: The comment for the rating
+required:
+  - courseId
+  - userId
+  - rating
+  - comment

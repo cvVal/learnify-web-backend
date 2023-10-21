@@ -1,0 +1,52 @@
+get:
+  summary: Retrieves the review for the given user id
+  operationId: getReviewByUserId
+  tags:
+    - Review
+  parameters:
+    - name: reviewId
+      in: path
+      required: true
+      description: The unique identifier of the review.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ./models/review-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml
+delete:
+  summary: Deletes the review by the given id
+  operationId: deleteReview
+  tags:
+    - Review
+  parameters:
+    - name: reviewId
+      in: path
+      required: true
+      description: The unique identifier of the review.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No content is returned
+      content:
+        application/json:
+          schema:
+            $ref: ./models/review-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

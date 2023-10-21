@@ -1,0 +1,36 @@
+title: Questions
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+    example: 72
+    description: The unique identifier of these questions
+  quizId:
+    type: integer
+    format: int64
+    example: 3
+    description: The unique identifier of the quiz these questions belongs to
+  question:
+    type: String
+    example: What is the output of the following Kotlin code?
+    description: The text of the question
+  options:
+    type: array
+    items:
+      type: string
+    example:
+      - "A - Hello World"
+      - "B - 42"
+      - "C - 98"
+      - "D - None of the above"
+    description: The list of multiple-choice options for the question
+  correctOption:
+    type: string
+    example: B
+    description: The letter of the correct option for the question
+required:
+  - quizId
+  - question
+  - options
+  - correctOption

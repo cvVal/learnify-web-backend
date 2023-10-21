@@ -1,0 +1,22 @@
+delete:
+  summary: Delete a course by id
+  operationId: deleteCourseById
+  tags:
+    - Course
+  parameters:
+    - name: courseId
+      in: path
+      required: true
+      description: The unique identifier of the course.
+      schema:
+        type: integer
+        format: int64
+  responses:
+    '204':
+      description: No body response to a valid request
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

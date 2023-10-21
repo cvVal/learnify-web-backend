@@ -1,0 +1,27 @@
+get:
+  summary: Filter the courses by title
+  operationId: getCoursesByTitleContaining
+  tags:
+    - Course
+  parameters:
+    - name: title
+      in: path
+      required: true
+      description: The title of the course.
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ./models/course-response.yaml
+    default:
+      description: unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: ../models/error.yaml

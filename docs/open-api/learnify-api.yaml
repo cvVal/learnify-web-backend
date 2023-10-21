@@ -1,0 +1,142 @@
+openapi: 3.0.0
+info:
+  title: Learnify Web Backend
+  license:
+    name: Apache 2.0
+  contact:
+    name: Sev
+    email: some@email.com
+  description: Documentation for the Learnify application.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/
+    description: Local Host
+tags:
+  - name: Authentication
+  - name: User Profile
+  - name: Course
+  - name: Lesson
+  - name: Review
+  - name: Quiz
+  - name: Enrollment
+  - name: Additional Resources
+paths:
+
+  ###################### Authentication Endpoints ##############################
+
+  #  '/token':
+  #    $ref: ./authentication/token.yaml
+
+  ###################### User Profile Endpoints ##############################
+
+  '/users':
+    $ref: ./user-profile/users.yaml
+
+  '/users/{userId}':
+    $ref: ./user-profile/users-by-id.yaml
+
+  ###################### Course Endpoints ##############################
+
+  '/courses':
+    $ref: ./course/courses.yaml
+
+  '/courses/id/{courseId}':
+    $ref: ./course/get-course-by-id.yaml
+
+  '/courses/{courseId}':
+    $ref: ./course/delete-course-by-id.yaml
+
+  '/courses/top-rated':
+    $ref: ./course/courses-top-rated.yaml
+
+  '/courses/title-containing/{title}':
+    $ref: ./course/courses-title-containing.yaml
+
+  '/courses/instructor/{instructorId}':
+    $ref: ./course/courses-by-instructor-id.yaml
+
+  '/courses/category/{category}':
+    $ref: ./course/courses-category.yaml
+
+  '/courses/level/{level}':
+    $ref: ./course/courses-level.yaml
+
+  ###################### Lesson Endpoints ##############################
+
+  '/lessons':
+    $ref: ./lesson/lessons.yaml
+
+  '/lessons/course/{courseId}':
+    $ref: ./lesson/lessons-by-course-id.yaml
+
+  '/lessons/{lessonId}':
+    $ref: ./lesson/lessons-by-id.yaml
+
+  ###################### Review Endpoints ##############################
+
+  '/reviews':
+    $ref: ./review/reviews.yaml
+
+  '/reviews/{reviewId}':
+    $ref: ./review/reviews-by-id.yaml
+
+  ###################### Quiz Endpoints ##############################
+
+  '/quizzes':
+    $ref: ./quiz/quizzes.yaml
+
+  '/quizzes/{quizId}':
+    $ref: ./quiz/quizzes-by-id.yaml
+
+  ###################### Enrollment Endpoints ##############################
+
+  '/enrollments':
+    $ref: ./enrollment/enrollments.yaml
+
+  '/enrollments/student/{studentId}':
+    $ref: ./enrollment/get-student-enrollment-by-id.yaml
+
+  '/enrollments/{enrollmentId}':
+    $ref: ./enrollment/delete-enrollment-by-id.yaml
+
+  ###################### Additional Resource Endpoints ##############################
+
+  '/additional-resources':
+    $ref: ./additional-resources/resources.yaml
+
+  '/additional-resources/{resourceId}':
+    $ref: ./additional-resources/resources-by-id.yaml
+
+  ###################### Amazon S3 Endpoints ##############################
+
+  '/s3/upload':
+    $ref: ./amazon-s3/s3-object-upload.yaml
+
+  '/s3':
+    $ref: ./amazon-s3/s3-objects.yaml
+
+  '/s3/{fileKey}':
+    $ref: ./amazon-s3/s3-object.yaml
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    User Profile:
+      $ref: ./user-profile/models/user-response.yaml
+    Course:
+      $ref: ./course/models/course-response.yaml
+    Lesson:
+      $ref: ./lesson/models/lesson-response.yaml
+    Review:
+      $ref: ./review/models/review-response.yaml
+    Quiz:
+      $ref: ./quiz/models/quiz-response.yaml
+    Enrollment:
+      $ref: ./enrollment/models/enrollment-response.yaml
+    Additional Resources:
+      $ref: ./additional-resources/models/resource-response.yaml
+    Error:
+      $ref: ./models/error.yaml

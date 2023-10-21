@@ -1,0 +1,25 @@
+title: User Base
+type: object
+properties:
+  firstName:
+    type: string
+    example: Josefina
+    description: The first name of the user
+  lastName:
+    type: string
+    example: Saldana
+    description: The last name of the user
+  profilePictureUrl:
+    type: string
+    example: "https://example.com/image.jpg"
+    description: The URL for the user's profile picture, if available
+  roles:
+    type: array
+    items:
+      $ref: ./user-roles.yaml
+    description: The roles assigned to the user
+  bio:
+    type: string
+    example: I'm a passionate programmer who loves learning new things.
+        When I'm not coding, you can find me building Super Mario Lego sets.
+    description: A brief biography of the user, if available
