@@ -16,3 +16,4 @@ This project is the culmination of my efforts, where I've designed and developed
 - **PostgreSQL**: The database of choice for data storage and management.
 - **AWS S3**: Integrating with Amazon Web Services (AWS) S3 for efficient storage and retrieval of files.
 - **Mapstruct**: Employing Mapstruct to simplify mapping between different data models.
+- **Swagger**: Documenting APIs with Swagger for clear and accessible API documentation.
